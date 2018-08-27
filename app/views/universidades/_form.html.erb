@@ -1,0 +1,37 @@
+<%= form_with(model: universidad, local: true) do |form| %>
+  <% if universidad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(universidad.errors.count, "error") %> prohibited this universidad from being saved:</h2>
+
+      <ul>
+      <% universidad.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Localidad %>
+    <%= form.collection_select :localidad_id, Localidad.all, :id, :nombre, {}, {class: "form-control"} %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :emai, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :reponsable %>
+    <%= form.text_field :reponsable, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

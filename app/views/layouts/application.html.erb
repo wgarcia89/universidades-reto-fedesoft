@@ -22,13 +22,15 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Localidades</a>
+        <%= link_to "Localidades", localidades_path, class:"nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Universidades", universidades_path, class:"nav-link" %>
       </li>
     </ul>
   </div>
 </nav>
   <div class="container">
-
     <%= yield %>
   </div>
   </body>
