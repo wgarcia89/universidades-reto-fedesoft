@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titulo:</strong>
+  <%= @reto.titulo %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @reto.email %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @reto.telefono %>
+</p>
+
+<p>
+  <strong>Nombre completo:</strong>
+  <%= @reto.nombre_completo %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @reto.descripcion %>
+</p>
+
+<p>
+  <strong>Localidad:</strong>
+  <%= @reto.localidad %>
+</p>
+
+<%= link_to 'Edit', edit_reto_path(@reto) %> |
+<%= link_to 'Back', retos_path %>

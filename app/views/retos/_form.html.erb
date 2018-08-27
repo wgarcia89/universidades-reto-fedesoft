@@ -1,0 +1,47 @@
+<%= form_with(model: reto, local: true) do |form| %>
+  <% if reto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reto.errors.count, "error") %> prohibited this reto from being saved:</h2>
+
+      <ul>
+      <% reto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :telefono %>
+    <%= form.text_field :telefono, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :nombre_completo %>
+    <%= form.text_field :nombre_completo, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :Localidad %>
+    <%= form.collection_select :localidad_id, Localidad.all, :id, :nombre, {}, {class: "form-control"} %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

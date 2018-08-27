@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_234112) do
+ActiveRecord::Schema.define(version: 2018_08_27_235351) do
 
   create_table "localidades", force: :cascade do |t|
     t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "retos", force: :cascade do |t|
+    t.string "titulo"
+    t.string "email"
+    t.string "telefono"
+    t.string "nombre_completo"
+    t.string "descripcion"
+    t.integer "localidad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["localidad_id"], name: "index_retos_on_localidad_id"
   end
 
   create_table "universidades", force: :cascade do |t|
