@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="/" >RetoU</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+  <% if user_signed_in? %>
+  <li class="nav-item">
+    <%= link_to "Localidades", localidades_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Universidades", universidades_path, class:"nav-link" %>
+  </li>
+  <li class="nav-item">
+    <%= link_to "Retos", retos_path, class:"nav-link" %>
+  </li>
+  <li>
+    <%= link_to  "logout", destroy_user_session_path, class:"nav-link", method: :delete %>
+  </li>
+  <% else %>
+  <li class="nav-item">
+    <%= link_to "Crear Reto", new_reto_path, class:"nav-link" %>
+  </li>
+  <li>
+    <%= link_to  "login", new_user_session_path, class:"nav-link" %>
+  </li>
+  <% end %>
+</ul>
+</div>
+</nav>
