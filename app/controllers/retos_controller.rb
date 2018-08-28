@@ -29,7 +29,9 @@ class RetosController < ApplicationController
 
     respond_to do |format|
       if @reto.save
-        RetoMailer.with(reto: @reto).nuevo.deliver_later
+        @reto.localidad.universidades.all.each do |universidad|
+          RetoMailer.with(reto: @reto, universidad: universidad).nuevo.deliver_later
+        end
         format.html { redirect_to @reto, notice: 'Reto was successfully created.' }
         format.json { render :show, status: :created, location: @reto }
       else

@@ -1,3 +1,4 @@
 class Localidad < ApplicationRecord
-  has_many :univerdades
+  has_many :universidades
+  has_many :retos
 end

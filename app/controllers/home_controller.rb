@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
-  layout :home
-  
+  layout "home"
+
   def index
   end
 end

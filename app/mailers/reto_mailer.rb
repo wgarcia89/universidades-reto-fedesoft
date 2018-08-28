@@ -7,8 +7,11 @@ class RetoMailer < ApplicationMailer
   #
   def nuevo
     @greeting = "Hi"
+    @reto = params[:reto]
+    @universidad = params[:universidad]
 
-    mail to: "wilfer.sis@gmail.com"
+    mail to: @universidad.email, subject: "Hay un nuevo reto disponible #{@reto.id}"
+
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

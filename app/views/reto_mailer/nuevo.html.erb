@@ -1,5 +1,37 @@
-<h1>Reto#nuevo</h1>
+
+<h1>Hola <%= @universidad.reponsable %>, </h1>
+
+<h2>Tenemos un nuevo reto disponible. </h2>
 
 <p>
-  <%= @greeting %>, find me in app/views/reto_mailer/nuevo.html.erb
+  <strong>id:</strong>
+  <%= @reto.id %>
+</p>
+<p>
+  <strong>Titulo:</strong>
+  <%= @reto.titulo %>
+</p>
+<p>
+  <strong>Nombre del retador:</strong>
+  <%= @reto.nombre_completo %>
+</p>
+
+<p>
+  <strong>Email del retador:</strong>
+  <%= @reto.email %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @reto.telefono %>
+</p>
+
+<p>
+  <strong>Descripcion del reto:</strong>
+  <%= @reto.descripcion %>
+</p>
+
+<p>
+  <strong>Localidad:</strong>
+  <%= @reto.localidad.nombre %>
 </p>
