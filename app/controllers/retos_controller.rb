@@ -29,6 +29,7 @@ class RetosController < ApplicationController
 
     respond_to do |format|
       if @reto.save
+        RetoMailer.with(reto: @reto).nuevo.deliver_later
         format.html { redirect_to @reto, notice: 'Reto was successfully created.' }
         format.json { render :show, status: :created, location: @reto }
       else
