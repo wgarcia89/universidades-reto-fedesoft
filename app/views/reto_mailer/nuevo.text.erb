@@ -1,3 +1,13 @@
-Reto#nuevo
 
-<%= @greeting %>, find me in app/views/reto_mailer/nuevo.text.erb
+Hola <%= @universidad.reponsable %>,
+
+Tenemos un nuevo reto disponible.
+
+
+id: <%= @reto.id %>
+Titulo: <%= @reto.titulo %>
+Nombre del retado: <%= @reto.nombre_completo %>
+Email del retador: <%= @reto.email %>
+Telefono: <%= @reto.telefono %>
+Descripcion del reto: <%= @reto.descripcion %>
+Localidad: <%= @reto.localidad.nombre %>
