@@ -7,7 +7,7 @@
 
 <p>
   <strong>Localidad:</strong>
-  <%= @universidad.localidad %>
+  <%= @universidad.localidad.nombre %>
 </p>
 
 <p>
@@ -19,6 +19,28 @@
   <strong>Reponsable:</strong>
   <%= @universidad.reponsable %>
 </p>
+<p>
+  <strong>Dirección:</strong>
+  <%= @universidad.place %>
+</p>
+<p>
+  <strong>Latitud:</strong>
+  <%= @universidad.latitude %>
+</p>
+<p>
+  <strong>Longitud:</strong>
+  <%= @universidad.longitude %>
+</p>
+<div id="map"></div>
+<script>
+var map;
+$( document ).ready(function() {
+
+  var punto = {lat: <%= @universidad.latitude %>, lng: <%= @universidad.longitude %>};
+  var map = new google.maps.Map(document.getElementById('map'), {zoom: 15, center: punto});
+  var marker = new google.maps.Marker({position: punto, map: map});
+});
+</script>
 
 <%= link_to 'Edit', edit_universidad_path(@universidad) %> |
 <%= link_to 'Back', universidades_path %>

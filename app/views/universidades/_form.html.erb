@@ -31,6 +31,25 @@
     <%= form.text_field :reponsable, class:"form-control" %>
   </div>
 
+  <div id="gmaps-canvas">
+
+   </div>
+   <div class="form-group">
+     <%= form.label :place %><br>
+     <%= form.text_field :place, class:"form-control" %>
+     <div id="gmaps-error">
+
+     </div>
+   </div>
+   <div class="form-group">
+     <%= form.label :latitud %>
+     <%= form.text_field :latitude, class:"form-control" %>
+   </div>
+   <div class="form-group">
+     <%= form.label :longitud %>
+     <%= form.text_field :longitude, class:"form-control" %>
+   </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

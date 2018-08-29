@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_000028) do
+ActiveRecord::Schema.define(version: 2018_08_29_231522) do
 
   create_table "localidades", force: :cascade do |t|
     t.string "nombre"
@@ -37,6 +37,9 @@ ActiveRecord::Schema.define(version: 2018_08_28_000028) do
     t.string "reponsable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "place"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["localidad_id"], name: "index_universidades_on_localidad_id"
   end
 
