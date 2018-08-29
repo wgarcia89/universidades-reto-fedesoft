@@ -29,5 +29,27 @@
 </table>
 
 <br>
+<div id="map"></div>
+<script>
+  $( document ).ready(function() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10, center: {lat: 4.6027603, lng: -74.06}
+    });
+    var markers = locations.map(function(location, i) {
+      return new google.maps.Marker({
+        position: location, label: location.label
+      });
+    });
+
+    // Add a marker clusterer to manage the markers.
+    var markerCluster = new MarkerClusterer(map, markers,
+        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  });
+  var locations = [
+    <% @universidades.each do |u| %>
+    <%= "{lat: #{u.latitude}, lng: #{u.longitude}, label: '#{u.nombre}' },".html_safe %>
+    <% end %>
+  ]
+</script>
 
 <%= link_to 'New Universidad', new_universidad_path %>
